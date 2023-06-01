@@ -15,7 +15,6 @@ from django.forms import  (
 from .models import MainInfoModel
 
 
-
 class FileForm(forms.Form):
     copy_passport = FileField(widget=ClearableFileInput())
     copy_certificate = FileField(widget=ClearableFileInput())
@@ -26,131 +25,132 @@ class MainInfoForm(forms.ModelForm):
 
     class Meta:
         model = MainInfoModel
-        exclude = ['major_choice']
+        # exclude = ['major_choice']
+        fields = '__all__'
 
         widgets = {
             'first_name': TextInput(attrs={
-                "id":"name",
+                'id': 'name',
                 'class': "same_input",
-                "placeholder":"Имя",
+                "placeholder": "Имя",
                 }),
             'last_name': TextInput(attrs={
-                "id":"surname",
+                "id": "surname",
                 'class': "same_input",
-                "placeholder":"Фамилия",
+                "placeholder": "Фамилия",
                 }),
             'middle_name': TextInput(attrs={
-                "id":"f-name",
+                "id": "f-name",
                 'class': "same_input",
-                "placeholder":"Отчество",
+                "placeholder": "Отчество",
                 }),
             'gender': Select(attrs={
-                "id":"surname",
+                "id": "surname",
                 'class': "same_input",
-                "placeholder":"Фамилия",
+                "placeholder": "Фамилия",
                 }),
             'birth_date': DateInput(
                 attrs={
-                    "id":"date",
+                    "id": "date",
                     'class': "same_input",
                     'type': 'date',
                 }),
             'nationality': TextInput(attrs={
-                "id":"nation",
+                "id": "nation",
                 'class': "same_input",
-                "placeholder":"Национальность",
-                }),    
+                "placeholder": "Национальность",
+                }),
             'birth_place': TextInput(attrs={
-                "id":"place",
+                "id": "place",
                 'class': "same_input",
-                "placeholder":"Место рождения",
-                }),    
+                "placeholder": "Место рождения",
+                }),
             'living_place': TextInput(attrs={
-                "id":"place",
+                "id": "place",
                 'class': "same_input",
-                "placeholder":"Место проживания",
-                }),    
+                "placeholder": "Место проживания",
+                }),
             'citizenship': TextInput(attrs={
-                "id":"native",
+                "id": "native",
                 'class': "same_input",
-                "placeholder":"Гражданство",
-                }),    
+                "placeholder": "Гражданство",
+                }),
             'identity_document_name': TextInput(attrs={
-                "id":"nat_doc",
+                "id": "nat_doc",
                 'class': "same_input",
-                "placeholder":"Документ личности",
-                }),    
+                "placeholder": "Документ личности",
+                }),
             'identity_document_ser': TextInput(attrs={
-                "id":"seria",
+                "id": "seria",
                 'class': "same_input",
-                "placeholder":"Серия",
-                "style":"max-width: 80px;"
-                }),    
+                "placeholder": "Серия",
+                "style": "max-width: 80px;"
+                }),
             'identity_document_id': TextInput(attrs={
-                "id":"num",
+                "id": "num",
                 'class': "same_input",
-                "placeholder":"Номер паспорта",
-                "style":"max-width: 240px;"
-
-                }),    
+                "placeholder": "Номер паспорта",
+                "style": "max-width: 240px;"
+                }),
             'identity_document_issued_info': TextInput(attrs={
-                "id":"num",
+                "id": "num",
                 'class': "same_input",
-                }),    
+                }),
             'home_phone_number': TextInput(attrs={
-                "id":"phone",
+                "id": "phone",
                 'class': "same_input",
-                "placeholder":"+998",
-                "value" : "+998"
-                }),    
+                "placeholder": "+998",
+                "value": "+998"
+                }),
             'own_phone_number': TextInput(attrs={
-                "id":"tel",
+                "id": "tel",
                 'class': "same_input",
-                "placeholder":"+998",
-                "value" : "+998"
-                }),    
+                "placeholder": "+998",
+                "value": "+998"
+                }),
             'email': EmailInput(attrs={
-                "id":"gmail",
-                'class': "same_input", 
+                "id": "gmail",
+                'class': "same_input",
                 'placeholder': 'Эл.почта'
                 }),
             'graduation_place': Select(attrs={
-                "id":"select_edu",
+                "id": "select_edu",
                 }),
             'graduation_certificate_ser': TextInput(attrs={
-                "id":"diploma",
-                'class': "same_input", 
+                "id": "diploma",
+                'class': "same_input",
                 }),
             'graduation_year': Select(attrs={
-                "id":"year_grad",
-                'class': "same_input", 
+                "id": "year_grad",
+                'class': "same_input",
                 }),
             'copy_passport': ClearableFileInput(attrs={
-                "id":"choose_file",
+                "id": "choose_file",
                 }),
             'copy_graduation_certificate': ClearableFileInput(attrs={
-                "id":"choose_file",
+                "id": "choose_file",
                 }),
             'image_three_to_four': ClearableFileInput(attrs={
-                "id":"choose_file",
+                "id": "choose_file",
                 }),
-            'major_choice' : RadioSelect(attrs={
-                "style":"max-width: 400px; height: 40px",
+            'major_choice': RadioSelect(attrs={
+                "style": "max-width: 400px;",
+                "class": "faculty_type"
             }),
             'technic_major_choice_first': Select(attrs={
-                "style":"max-width: 600px; height: 40px",
+                "style": "max-width: 600px; height: 40px",
                 }),
             'technic_major_choice_second': Select(attrs={
-                "style":"max-width: 600px; height: 40px"
+                "style": "max-width: 600px; height: 40px"
                 }),
             'technic_major_choice_third': Select(attrs={
-                "style":"max-width: 600px; height: 40px"
+                "style": "max-width: 600px; height: 40px"
                 }),
             'economic_major_choice_first': Select(attrs={
-                "style":"max-width: 400px; height: 40px"
+                "style": "max-width: 400px; height: 40px"
                 }),
             'economic_major_choice_second': Select(attrs={
-                "style":"max-width: 400px; height: 40px"
+                "style": "max-width: 400px; height: 40px"
                 }),
         }
 

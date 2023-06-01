@@ -166,13 +166,10 @@
         </div>
         <div class="sub_parent">
           <h1 class="info_text">Выберите одно из двух направлений:</h1>
+            {{ form.major_choice }}
         </div>
         <div class="two_programs form_wrapper">
-          <div class="check_box">
-            <div class="box_same">
-              <!-- {{ form.major_choice }} -->
-              Техническое направление
-            </div>
+          <div class="check_box tech_box">
             <div id="tech_faculties">
               <div class="select_faculty">
                 {{ form.technic_major_choice_first }}
@@ -185,7 +182,7 @@
               </div>
             </div>
           </div>
-          <!-- <div class="check_box">
+          <div class="check_box eco_box">
             <div id="econ_faculties">
               <div class="select_faculty">
                 {{ form.economic_major_choice_first }}
@@ -194,7 +191,7 @@
                 {{ form.economic_major_choice_second }}
               </div>
             </div>
-          </div> -->
+          </div>
         </div>
         <div class="statement">
           <div class="state_text">

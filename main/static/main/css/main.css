@@ -104,6 +104,12 @@ ul li {
   margin-right: 1.5rem;
   font-size: 1.4rem;
 }
+
+#id_major_choice {
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+}
 #select_edu {
   width: 10rem;
   font-size: 0.7rem;
@@ -126,6 +132,9 @@ ul li {
 .file_design {
   width: 8rem;
   margin-top: 0.8rem;
+}
+.sub_parent {
+  font-size: 1.6rem;
 }
 .doc_box {
   margin: 2rem auto;
